@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using HotelListing.Configurations;
 using HotelListing.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,6 +40,7 @@ namespace HotelListing
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "HotelListing", Version = "v1"});
             });
+            services.AddAutoMapper(typeof(MapperInitializer));
 
             services.AddControllers();
         }

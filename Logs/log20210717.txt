@@ -1,0 +1,16 @@
+2021-07-17 07:55:08.960 -04:00 [INF] Application is starting
+2021-07-17 07:55:11.809 -04:00 [INF] Now listening on: https://localhost:5001
+2021-07-17 07:55:11.816 -04:00 [INF] Now listening on: http://localhost:5000
+2021-07-17 07:55:11.817 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-07-17 07:55:11.817 -04:00 [INF] Hosting environment: Development
+2021-07-17 07:55:11.817 -04:00 [INF] Content root path: C:\Users\EAGLE\RiderProjects\HotelListing\HotelListing
+2021-07-17 07:55:16.726 -04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2021-07-17 07:55:17.063 -04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 343.4122ms
+2021-07-17 07:55:18.306 -04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - -
+2021-07-17 07:55:18.435 -04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-07-17 07:55:18.436 -04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/swagger-ui.css - - - 0 142933 text/css 129.8403ms
+2021-07-17 07:55:18.772 -04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/favicon-16x16.png - -
+2021-07-17 07:55:18.776 -04:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2021-07-17 07:55:18.776 -04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/favicon-16x16.png - - - 200 665 image/png 3.8152ms
+2021-07-17 07:55:18.937 -04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2021-07-17 07:55:19.099 -04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 162.1958ms

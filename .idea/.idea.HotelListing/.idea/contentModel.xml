@@ -8,6 +8,9 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Configurations" t="Include">
+          <e p="MapperInitializer.cs" t="Include" />
+        </e>
         <e p="Controllers" t="Include">
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
@@ -17,10 +20,18 @@
           <e p="Hotel.cs" t="Include" />
         </e>
         <e p="HotelListing.csproj" t="IncludeRecursive" />
+        <e p="IRepository" t="Include">
+          <e p="IGenericRepository.cs" t="Include" />
+          <e p="IUnitOfWork.cs" t="Include" />
+        </e>
         <e p="Migrations" t="Include">
           <e p="20210716104646_DatabaseCreated.cs" t="Include" />
           <e p="20210716104646_DatabaseCreated.Designer.cs" t="Include" />
           <e p="DatabaseContextModelSnapshot.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="CountryDTO.cs" t="Include" />
+          <e p="HotelDTO.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -32,6 +43,10 @@
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Repository" t="Include">
+          <e p="GenericRepository.cs" t="Include" />
+          <e p="UnitOfWork.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="WeatherForecast.cs" t="Include" />
