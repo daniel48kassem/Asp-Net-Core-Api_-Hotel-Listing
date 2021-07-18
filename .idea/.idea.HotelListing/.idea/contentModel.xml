@@ -12,6 +12,8 @@
           <e p="MapperInitializer.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
+          <e p="CountryController.cs" t="Include" />
+          <e p="HotelController.cs" t="Include" />
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
@@ -27,6 +29,8 @@
         <e p="Migrations" t="Include">
           <e p="20210716104646_DatabaseCreated.cs" t="Include" />
           <e p="20210716104646_DatabaseCreated.Designer.cs" t="Include" />
+          <e p="20210717185400_SeedData.cs" t="Include" />
+          <e p="20210717185400_SeedData.Designer.cs" t="Include" />
           <e p="DatabaseContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">

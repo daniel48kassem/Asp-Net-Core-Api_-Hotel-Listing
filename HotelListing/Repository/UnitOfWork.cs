@@ -27,7 +27,7 @@ namespace HotelListing.Repository
         public void Dispose()
         {
             //like garbage collector,like when i finish ,free the memory
-            //free all the db context connections  were using  
+            //free all the db context connections that the context was using  
             _context.Dispose();
             GC.SuppressFinalize(this);
         }

@@ -19,18 +19,18 @@ namespace HotelListing.Data
                 },
                 new Country
                 {
-                    Id = 1,
+                    Id = 2,
                     Name = "England",
                     ShortName = "UK"
                 },
                 new Country
                 {
-                    Id = 1,
+                    Id = 3,
                     Name = "United States",
                     ShortName = "US"
                 }
             );
-
+        
             builder.Entity<Hotel>().HasData(
                 new Hotel
                 {
@@ -42,7 +42,7 @@ namespace HotelListing.Data
                 },
                 new Hotel
                 {
-                    Id = 1,
+                    Id = 2,
                     Name = "Hayat",
                     CountryId = 1,
                     Address = "aas",
