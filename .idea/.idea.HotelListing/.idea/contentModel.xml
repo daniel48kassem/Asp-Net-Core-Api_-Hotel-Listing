@@ -9,14 +9,21 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Configurations" t="Include">
+          <e p="Entities" t="Include">
+            <e p="CountryConfiguration.cs" t="Include" />
+            <e p="HotelConfiguration.cs" t="Include" />
+            <e p="RoleConfiguration.cs" t="Include" />
+          </e>
           <e p="MapperInitializer.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
+          <e p="AccountController.cs" t="Include" />
           <e p="CountryController.cs" t="Include" />
           <e p="HotelController.cs" t="Include" />
           <e p="WeatherForecastController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
+          <e p="ApiUser.cs" t="Include" />
           <e p="Country.cs" t="Include" />
           <e p="DatabaseContext.cs" t="Include" />
           <e p="Hotel.cs" t="Include" />
@@ -31,11 +38,16 @@
           <e p="20210716104646_DatabaseCreated.Designer.cs" t="Include" />
           <e p="20210717185400_SeedData.cs" t="Include" />
           <e p="20210717185400_SeedData.Designer.cs" t="Include" />
+          <e p="20210719150201_AddedIdentity.cs" t="Include" />
+          <e p="20210719150201_AddedIdentity.Designer.cs" t="Include" />
+          <e p="20210719152427_AddedRoles.cs" t="Include" />
+          <e p="20210719152427_AddedRoles.Designer.cs" t="Include" />
           <e p="DatabaseContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Models" t="Include">
           <e p="CountryDTO.cs" t="Include" />
           <e p="HotelDTO.cs" t="Include" />
+          <e p="UserDTO.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -52,6 +64,7 @@
           <e p="GenericRepository.cs" t="Include" />
           <e p="UnitOfWork.cs" t="Include" />
         </e>
+        <e p="ServiceExtensions.cs" t="Include" />
         <e p="Startup.cs" t="Include" />
         <e p="WeatherForecast.cs" t="Include" />
       </e>

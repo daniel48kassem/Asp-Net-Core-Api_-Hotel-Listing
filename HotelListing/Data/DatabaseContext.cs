@@ -1,54 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HotelListing.Configurations;
+using HotelListing.Configurations.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace HotelListing.Data
 {
-    public class DatabaseContext : DbContext
+    public class DatabaseContext : IdentityDbContext<ApiUser>
     {
-        public DatabaseContext(DbContextOptions options) : base(options: options)
+        public DatabaseContext(DbContextOptions options) : base(options)
         {
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Country>().HasData(
-                new Country
-                {
-                    Id = 1,
-                    Name = "Syria",
-                    ShortName = "SY"
-                },
-                new Country
-                {
-                    Id = 2,
-                    Name = "England",
-                    ShortName = "UK"
-                },
-                new Country
-                {
-                    Id = 3,
-                    Name = "United States",
-                    ShortName = "US"
-                }
-            );
-        
-            builder.Entity<Hotel>().HasData(
-                new Hotel
-                {
-                    Id = 1,
-                    Name = "Four Seasons",
-                    CountryId = 2,
-                    Address = "aa",
-                    Rating = 4.5
-                },
-                new Hotel
-                {
-                    Id = 2,
-                    Name = "Hayat",
-                    CountryId = 1,
-                    Address = "aas",
-                    Rating = 4.2
-                }
-            );
+            base.OnModelCreating(builder);
+
+            builder.ApplyConfiguration(new CountryConfiguration());
+            builder.ApplyConfiguration(new HotelConfiguration());
+            builder.ApplyConfiguration(new RoleConfiguration());
+            
         }
 
         public DbSet<Country> Countries { get; set; }
