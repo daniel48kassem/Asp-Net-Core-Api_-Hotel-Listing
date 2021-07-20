@@ -91,9 +91,7 @@ namespace HotelListing.Controllers
                     return Unauthorized();
                 }
                 var key = Environment.GetEnvironmentVariable("KEY");
-                _logger.LogInformation($"{key}");
-                _logger.LogInformation($"{key}");
-                _logger.LogInformation($"{key}");
+                
                 //return a new object,contains the token
                 return Accepted(new {Token =await _authManager.CreateToken()});
             }

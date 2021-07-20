@@ -46,7 +46,7 @@ namespace HotelListing.Controllers
             }
         }
 
-        [HttpGet("{id:int}"),Authorize]
+        [HttpGet("{id:int}", Name = "GetHotel")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> GetHotel(int id)
@@ -54,7 +54,7 @@ namespace HotelListing.Controllers
             try
             {
                 var hotel = await _unitOfWork.Hotels.Get(q => q.Id == id, new List<string> {"Country"});
-                
+
                 var result = _mapper.Map<HotelDTO>(hotel);
                 return Ok(result);
             }
@@ -63,6 +63,101 @@ namespace HotelListing.Controllers
             {
                 _logger.LogError(e, $"something went wrong in {nameof(GetHotel)}");
                 return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [Authorize(Roles = "Administrator")]
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> CreateHotel([FromBody] CreateHotelDTO hotelDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                _logger.LogError($"invalid post attempt{nameof(CreateHotel)}");
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var hotel = _mapper.Map<Hotel>(hotelDto);
+                //we are altering the database so we have to commit changes
+                await _unitOfWork.Hotels.Insert(hotel);
+                await _unitOfWork.save();
+
+                return CreatedAtRoute("GetHotel", new {id = hotel.Id}, hotel);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, $"something went wrong in {nameof(CreateHotel)}");
+                return StatusCode(500, "Internal Server Error");
+            }
+        }
+
+        [Authorize]
+        [HttpPut("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UpdateHotel(int id, [FromBody] UpdateHotelDTO hotelDto)
+        {
+            if (!ModelState.IsValid || id < 1)
+            {
+                _logger.LogError($"invalid Update attempt in {nameof(UpdateHotel)}");
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var hotel = await _unitOfWork.Hotels.Get(q => q.Id == id);
+                if (hotel == null)
+                {
+                    _logger.LogError($"invalid Update attempt in {nameof(UpdateHotel)}");
+                    return BadRequest("Submitted Data s not valid");
+                }
+
+                //(source,out object)
+                _mapper.Map(hotelDto,hotel);
+                _unitOfWork.Hotels.Update(hotel);
+                await _unitOfWork.save();
+                
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, $"Something went wrong in {nameof(UpdateHotel)}");
+                return StatusCode(500, "internal server error");
+            }
+        }
+        
+        [Authorize]
+        [HttpDelete("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> DeleteHotel(int id)
+        {
+            if (id < 1)
+            {
+                _logger.LogError($"invalid Delete attempt in {nameof(DeleteHotel)}");
+                return BadRequest("invalid Data Provided");
+            }
+
+            try
+            {
+                var hotel = await _unitOfWork.Hotels.Get(q => q.Id == id);
+                if (hotel == null)
+                {
+                    _logger.LogError($"invalid Delete attempt in {nameof(DeleteHotel)}");
+                    return BadRequest("Submitted Data is not valid");
+                }
+
+                await _unitOfWork.Hotels.Delete(id);
+                await _unitOfWork.save();
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e, $"Something Went Wrong in {nameof(DeleteHotel)}");
+                return StatusCode(500, "internal server error");
             }
         }
     }

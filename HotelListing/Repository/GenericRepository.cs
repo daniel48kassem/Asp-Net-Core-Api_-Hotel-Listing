@@ -44,12 +44,13 @@ namespace HotelListing.Repository
                 query = orderBy(query);
             }
 
+            //here we ask him for not tracking the object status
             return await query.AsNoTracking().ToListAsync();
         }
 
         
         //The expression can be a lambda expression 
-        public async Task<T> Get(Expression<Func<T, bool>> expression, List<string> includes)
+        public async Task<T> Get(Expression<Func<T, bool>> expression, List<string> includes=null)
         {
             IQueryable<T> query=_db;
             if (includes!=null)

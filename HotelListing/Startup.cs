@@ -70,17 +70,23 @@ namespace HotelListing
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HotelListing v1"));
             }
-
+            
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "HotelListing v1"));
+            
             app.UseHttpsRedirection();
+            
+            //using cors with the policy "AllowAll"
             app.UseCors("AllowAll");
-            app.UseRouting();
+            
 
+            app.UseRouting();
+            //the order of these two middlewares is important
             app.UseAuthentication();
             app.UseAuthorization();
-
+          
+            
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }

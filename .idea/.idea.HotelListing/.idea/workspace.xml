@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bd75e86-8b0b-4bbc-bb56-61bfb67caa59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HotelListing/Services/AuthManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HotelListing/Services/IAuthManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelListing/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelListing/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HotelListing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HotelListing/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HotelListing/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelListing/Controllers/CountryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/Controllers/CountryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HotelListing/Controllers/HotelController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/Controllers/HotelController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HotelListing/HotelListing.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/HotelListing.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelListing/IRepository/IGenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/IRepository/IGenericRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelListing/Models/CountryDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/Models/CountryDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelListing/Models/HotelDTO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/Models/HotelDTO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelListing/Repository/GenericRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/Repository/GenericRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HotelListing/ServiceExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/ServiceExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HotelListing/Services/AuthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/Services/AuthManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HotelListing/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HotelListing/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/HotelListing/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/log20210717.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/log20210718.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/log20210719.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/log20210720.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/log20210720.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,17 +30,12 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/HotelListing/Program.cs" />
-      <option value="$PROJECT_DIR$/HotelListing/Repository/GenericRepository.cs" />
-      <option value="$PROJECT_DIR$/HotelListing/IRepository/IGenericRepository.cs" />
       <option value="$PROJECT_DIR$/HotelListing/IRepository/IUnitOfWork.cs" />
       <option value="$PROJECT_DIR$/HotelListing/Models/Hotel.cs" />
       <option value="$PROJECT_DIR$/HotelListing/Data/Country.cs" />
-      <option value="$PROJECT_DIR$/HotelListing/Models/CountryDTO.cs" />
       <option value="$PROJECT_DIR$/Logs/log20210718.txt" />
       <option value="$PROJECT_DIR$/HotelListing/Repository/UnitOfWork.cs" />
       <option value="$PROJECT_DIR$/HotelListing/Data/Hotel.cs" />
-      <option value="$PROJECT_DIR$/HotelListing/Models/HotelDTO.cs" />
-      <option value="$PROJECT_DIR$/HotelListing/Controllers/CountryController.cs" />
       <option value="$PROJECT_DIR$/HotelListing/ServicesExtentions.cs" />
       <option value="$PROJECT_DIR$/HotelListing/ServiceExtentions.cs" />
       <option value="$PROJECT_DIR$/HotelListing/Configurations/MapperInitializer.cs" />
@@ -53,14 +48,19 @@
       <option value="$PROJECT_DIR$/HotelListing/Configurations/Entities/HotelConfiguration.cs" />
       <option value="$PROJECT_DIR$/HotelListing/Data/DatabaseContext.cs" />
       <option value="$PROJECT_DIR$/HotelListing/Models/UserDTO.cs" />
-      <option value="$PROJECT_DIR$/HotelListing/ServiceExtensions.cs" />
       <option value="$PROJECT_DIR$/HotelListing/Services/IAuthManager.cs" />
-      <option value="$PROJECT_DIR$/HotelListing/appsettings.json" />
-      <option value="$PROJECT_DIR$/HotelListing/Services/AuthManager.cs" />
       <option value="$PROJECT_DIR$/Logs/log20210720.txt" />
-      <option value="$PROJECT_DIR$/HotelListing/Controllers/AccountController.cs" />
-      <option value="$PROJECT_DIR$/HotelListing/Controllers/HotelController.cs" />
       <option value="$PROJECT_DIR$/HotelListing/Startup.cs" />
+      <option value="$PROJECT_DIR$/HotelListing/Services/AuthManager.cs" />
+      <option value="$PROJECT_DIR$/HotelListing/ServiceExtensions.cs" />
+      <option value="$PROJECT_DIR$/HotelListing/Controllers/AccountController.cs" />
+      <option value="$PROJECT_DIR$/HotelListing/IRepository/IGenericRepository.cs" />
+      <option value="$PROJECT_DIR$/HotelListing/Repository/GenericRepository.cs" />
+      <option value="$PROJECT_DIR$/HotelListing/appsettings.json" />
+      <option value="$PROJECT_DIR$/HotelListing/Models/CountryDTO.cs" />
+      <option value="$PROJECT_DIR$/HotelListing/Models/HotelDTO.cs" />
+      <option value="$PROJECT_DIR$/HotelListing/Controllers/CountryController.cs" />
+      <option value="$PROJECT_DIR$/HotelListing/Controllers/HotelController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1vMWl9s9r54td86QVB17wgDRRBN" />
@@ -128,6 +128,7 @@
       <workItem from="1626607617055" duration="2772000" />
       <workItem from="1626698486638" duration="20844000" />
       <workItem from="1626762993527" duration="4665000" />
+      <workItem from="1626768154076" duration="8697000" />
     </task>
     <servers />
   </component>
