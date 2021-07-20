@@ -1,0 +1,45 @@
+2021-07-20 03:45:56.181 -04:00 [INF] Application is starting
+2021-07-20 03:45:58.088 -04:00 [INF] User profile is available. Using 'C:\Users\EAGLE\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-07-20 03:45:59.215 -04:00 [INF] Now listening on: https://localhost:5001
+2021-07-20 03:45:59.216 -04:00 [INF] Now listening on: http://localhost:5000
+2021-07-20 03:45:59.222 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-07-20 03:45:59.222 -04:00 [INF] Hosting environment: Development
+2021-07-20 03:45:59.223 -04:00 [INF] Content root path: C:\Users\EAGLE\RiderProjects\HotelListing\HotelListing
+2021-07-20 03:45:59.731 -04:00 [INF] Request starting HTTP/2 POST https://localhost:5001/api/Account/login application/json-patch+json 71
+2021-07-20 03:45:59.835 -04:00 [INF] CORS policy execution successful.
+2021-07-20 03:45:59.975 -04:00 [INF] Executing endpoint 'HotelListing.Controllers.AccountController.Login (HotelListing)'
+2021-07-20 03:46:00.133 -04:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(HotelListing.Models.LoginUserDTO) on controller HotelListing.Controllers.AccountController (HotelListing).
+2021-07-20 03:46:00.509 -04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger - -
+2021-07-20 03:46:00.567 -04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger - - - 301 0 - 56.5152ms
+2021-07-20 03:46:00.609 -04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/index.html - -
+2021-07-20 03:46:00.866 -04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/index.html - - - 200 - text/html;charset=utf-8 257.0420ms
+2021-07-20 03:46:01.394 -04:00 [INF] Registration Attempt For userdaniel48@gmail.com
+2021-07-20 03:46:01.615 -04:00 [INF] Request starting HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - -
+2021-07-20 03:46:02.164 -04:00 [INF] Request finished HTTP/2 GET https://localhost:5001/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 549.1643ms
+2021-07-20 03:46:05.645 -04:00 [INF] Entity Framework Core 5.0.7 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-07-20 03:46:08.394 -04:00 [INF] Executed DbCommand (262ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2021-07-20 03:46:08.975 -04:00 [INF] daniel48
+2021-07-20 03:46:08.975 -04:00 [INF] daniel48
+2021-07-20 03:46:08.975 -04:00 [INF] daniel48
+2021-07-20 03:46:09.312 -04:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-07-20 03:46:09.782 -04:00 [ERR] something wrong in the Login
+System.ArgumentOutOfRangeException: IDX10653: The encryption algorithm 'System.String' requires a key size of at least 'System.Int32' bits. Key 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey', is of size: 'System.Int32'. (Parameter 'key')
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider..ctor(SecurityKey key, String algorithm, Boolean willCreateSignatures)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateSignatureProvider(SecurityKey key, String algorithm, Boolean willCreateSignatures, Boolean cacheProvider)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateForSigning(SecurityKey key, String algorithm, Boolean cacheProvider)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateForSigning(SecurityKey key, String algorithm)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at HotelListing.Services.AuthManager.CreateToken() in C:\Users\EAGLE\RiderProjects\HotelListing\HotelListing\Services\AuthManager.cs:line 32
+   at HotelListing.Controllers.AccountController.Login(LoginUserDTO userDTO) in C:\Users\EAGLE\RiderProjects\HotelListing\HotelListing\Controllers\AccountController.cs:line 98
+2021-07-20 03:46:09.956 -04:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2021-07-20 03:46:10.224 -04:00 [INF] Executed action HotelListing.Controllers.AccountController.Login (HotelListing) in 10066.3382ms
+2021-07-20 03:46:10.226 -04:00 [INF] Executed endpoint 'HotelListing.Controllers.AccountController.Login (HotelListing)'
+2021-07-20 03:46:10.252 -04:00 [INF] Request finished HTTP/2 POST https://localhost:5001/api/Account/login application/json-patch+json 71 - 500 245 application/problem+json;+charset=utf-8 10539.0404ms

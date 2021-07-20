@@ -65,6 +65,10 @@
           <e p="UnitOfWork.cs" t="Include" />
         </e>
         <e p="ServiceExtensions.cs" t="Include" />
+        <e p="Services" t="Include">
+          <e p="AuthManager.cs" t="Include" />
+          <e p="IAuthManager.cs" t="Include" />
+        </e>
         <e p="Startup.cs" t="Include" />
         <e p="WeatherForecast.cs" t="Include" />
       </e>

@@ -7,6 +7,7 @@ using HotelListing.Configurations;
 using HotelListing.Data;
 using HotelListing.IRepository;
 using HotelListing.Repository;
+using HotelListing.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -38,6 +39,7 @@ namespace HotelListing
             services.AddAuthentication();
             //our static method
             services.ConfigureIdentity();
+            services.ConfigureJWT(Configuration);
             
             services.AddCors(o =>
             {
@@ -53,6 +55,8 @@ namespace HotelListing
 
             //every time is needed ,a new instance is created ,it is similar to service provider in laravel
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IAuthManager, AuthManager>();
+            
             //we say that whenever a loop reference problem occur ,ignore it
             //ex ,this happen in Hotel that has relation with country,
             //and the country has a relation with hotel ,and so on we have a loop
@@ -74,6 +78,7 @@ namespace HotelListing
             app.UseCors("AllowAll");
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
